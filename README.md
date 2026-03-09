@@ -39,8 +39,15 @@ A backend service that handles order processing using a modular, event-driven ar
    - `MONGO_URI=mongodb://localhost:27017/order-system`
    - `PORT=3000`
    - `CORS_ORIGIN=*`
+   - `START_WITHOUT_DB=false` (set to `true` for API-only boot when Mongo is offline)
 3. Run development server:
    `npm run dev`
+
+## Commands
+
+- Build: `npm run build`
+- Lint: `npm run lint`
+- Test: `npm test`
 
 ## API Examples
 

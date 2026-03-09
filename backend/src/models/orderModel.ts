@@ -1,5 +1,5 @@
 import { HydratedDocument, InferSchemaType, Schema, model } from "mongoose";
-import { v4 as uuidv4 } from "uuid";
+import { randomUUID } from "crypto";
 
 export enum OrderStatus {
   PENDING = "PENDING",
@@ -24,7 +24,7 @@ const orderSchema = new Schema(
       type: String,
       unique: true,
       required: true,
-      default: uuidv4
+      default: randomUUID
     },
     customerName: {
       type: String,
