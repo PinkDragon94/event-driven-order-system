@@ -42,9 +42,16 @@ A backend service that handles order processing using a modular, event-driven ar
    - `START_WITHOUT_DB=false` (set to `true` for API-only boot when Mongo is offline)
 3. Run development server:
    `npm run dev`
+4. Open the frontend dashboard:
+   - Frontend dev server: `http://localhost:5173`
+   - Backend API server: `http://localhost:3000`
 
 ## Commands
 
+- Dev (frontend + backend together): `npm run dev`
+- Dev backend only: `npm run dev:backend`
+- Dev backend with auto-reload: `npm run dev:backend:watch`
+- Dev frontend only: `npm run dev:frontend`
 - Build: `npm run build`
 - Lint: `npm run lint`
 - Test: `npm test`
@@ -69,3 +76,11 @@ A backend service that handles order processing using a modular, event-driven ar
     "status": "PROCESSING"
   }
   ```
+
+## Frontend
+
+The project now includes a built-in dashboard served by the backend from `/` with:
+- Order creation form
+- Order listing
+- Order detail view by ID
+- Status update workflow

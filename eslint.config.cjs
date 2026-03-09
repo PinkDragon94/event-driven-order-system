@@ -10,11 +10,26 @@ module.exports = [
     files: ["**/*.js", "**/*.cjs", "**/*.mjs"],
     languageOptions: {
       ecmaVersion: "latest",
-      sourceType: "commonjs"
+      sourceType: "commonjs",
+      globals: {
+        process: "readonly",
+        __dirname: "readonly",
+        console: "readonly"
+      }
     },
     rules: {
       "no-unused-vars": "warn",
       "no-undef": "error"
+    }
+  },
+  {
+    files: ["frontend/**/*.js"],
+    languageOptions: {
+      globals: {
+        document: "readonly",
+        window: "readonly",
+        fetch: "readonly"
+      }
     }
   },
   {

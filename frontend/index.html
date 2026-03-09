@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Ops Dashboard</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <header class="hero">
+        <p class="badge">Event-Driven Order System</p>
+        <h1>Order Ops Dashboard</h1>
+        <p class="subtitle">Create orders, inspect details, and move lifecycle statuses in one place.</p>
+      </header>
+
+      <section class="panel">
+        <h2>Create Order</h2>
+        <form id="create-order-form">
+          <label>
+            Customer name
+            <input id="customer-name" type="text" required placeholder="Jane Doe" />
+          </label>
+          <div id="items-container"></div>
+          <button id="add-item" type="button" class="ghost">+ Add Item</button>
+          <button type="submit">Create Order</button>
+        </form>
+        <p id="create-message" class="message"></p>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>Orders</h2>
+          <button id="refresh-orders" class="ghost" type="button">Refresh</button>
+        </div>
+        <div id="orders-list" class="order-grid"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Order Details</h2>
+        <form id="fetch-order-form" class="inline-form">
+          <input id="order-id-input" type="text" placeholder="Order ID" required />
+          <button type="submit">Load</button>
+        </form>
+        <pre id="order-details" class="details">Select an order to inspect.</pre>
+      </section>
+
+      <section class="panel">
+        <h2>Update Status</h2>
+        <form id="status-form" class="inline-form">
+          <input id="status-order-id" type="text" placeholder="Order ID" required />
+          <select id="status-select" required>
+            <option value="">Select status</option>
+            <option value="PENDING">PENDING</option>
+            <option value="PROCESSING">PROCESSING</option>
+            <option value="PAID">PAID</option>
+            <option value="COMPLETED">COMPLETED</option>
+            <option value="FAILED">FAILED</option>
+          </select>
+          <button type="submit">Update</button>
+        </form>
+        <p id="status-message" class="message"></p>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
